@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text=" &lt; На головну"
+            android:id="@+id/button6" android:textAlignment="gravity" android:singleLine="true"
+            android:gravity="left|center_vertical" android:layout_gravity="center_horizontal"
+            android:onClick="goToMainPage"
+            android:background="@drawable/campus_header_button" android:textColor="#FFF" android:textStyle="bold"/>
+</LinearLayout>
