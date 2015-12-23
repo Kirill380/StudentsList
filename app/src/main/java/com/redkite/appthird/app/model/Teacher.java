@@ -5,4 +5,12 @@ package com.redkite.appthird.app.model;
  */
 public class Teacher extends Person {
     private String link;
+
+    public Teacher() {
+
+    }
+
+    public Teacher(String login, String firstName, String lastName, String middleName, String pass, int photo, String description) {
+        super(login, firstName, lastName, middleName, pass, photo, description);
+    }
 }

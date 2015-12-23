@@ -1,6 +1,6 @@
 package com.redkite.appthird.app.model;
 
-import android.media.Image;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Created by Kirill Liubun on 20/12/2015.
@@ -11,8 +11,27 @@ public class Person {
     protected String lastName;
     protected String middleName;
     protected String pass;
-    protected Image photo;
+    protected int photo;
     private String description;
+
+
+    public Person() {
+
+    }
+    public Person(String login, String firstName, String lastName, String middleName, String pass, int photo, String description) {
+        this.login = login;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.pass= pass;
+        this.photo = photo;
+        this.description = description;
+    }
+
+    public boolean isEmpty() {
+        return StringUtils.isEmpty(login) || StringUtils.isEmpty(pass);
+    }
+
 
     public String getLogin() {
         return login;
@@ -54,11 +73,11 @@ public class Person {
         this.pass = pass;
     }
 
-    public Image getPhoto() {
+    public int getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Image photo) {
+    public void setPhoto(int photo) {
         this.photo = photo;
     }
 

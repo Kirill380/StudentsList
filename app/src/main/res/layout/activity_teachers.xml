@@ -4,9 +4,20 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text=" &lt; На головну"
+    <Button android:layout_width="match_parent" android:layout_height="65dp" android:text=" &lt; На головну"
             android:id="@+id/button6" android:textAlignment="gravity" android:singleLine="true"
             android:gravity="left|center_vertical" android:layout_gravity="center_horizontal"
             android:onClick="goToMainPage"
-            android:background="@drawable/campus_header_button" android:textColor="#FFF" android:textStyle="bold"/>
+            android:background="@drawable/campus_header_button" android:textColor="#FFF" android:textStyle="bold"
+            />
+
+
+    <ListView
+            android:id="@+id/teachers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+    </ListView>
+
 </LinearLayout>

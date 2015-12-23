@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.*;
+import com.redkite.appthird.app.mock.StudentRepository;
+import com.redkite.appthird.app.model.Student;
+import org.apache.commons.lang3.StringUtils;
+
+import static android.widget.Toast.makeText;
 
 
 public class WelcomePage extends Activity {
@@ -22,6 +24,7 @@ public class WelcomePage extends Activity {
     private Button listStudents;
     private Button listTeachers;
     private String login;
+    private StudentRepository repo = new StudentRepository();
     //    TODO work around make up new design
     private final int LOG_OUT_TOP_MARGIN = 20;
     private final int LOG_IN_TOP_MARGIN = 40;
@@ -33,6 +36,9 @@ public class WelcomePage extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        StudentRepository repo = new StudentRepository();
+        repo.save();
 
         loginField = (EditText) findViewById(R.id.login);
         passField = (EditText) findViewById(R.id.pass);
@@ -76,8 +82,26 @@ public class WelcomePage extends Activity {
 
 
     public void logIn(View view) {
-        //TODO check if user exist
         login = loginField.getText().toString();
+        String pass = passField.getText().toString();
+
+        if(StringUtils.isEmpty(login) || StringUtils.isEmpty(pass)) {
+            makeText(getApplicationContext(), "Fields may not be empty", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Student stud = repo.getStudentByLogin(login);
+
+        if(stud.isEmpty()) {
+            makeText(getApplicationContext(), "Such user doesn't exist", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(!stud.getPass().equals(pass)) {
+            makeText(getApplicationContext(), "Invalid password, try again", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         enableButtons(true);
         toggleLogIn(true);
 

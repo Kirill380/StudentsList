@@ -5,5 +5,13 @@ package com.redkite.appthird.app.model;
  */
 public class Student extends Person {
 
+    public Student() {
+
+    }
+
+    public Student(String login, String firstName, String lastName, String middleName, String pass, int photo, String description) {
+        super(login, firstName, lastName, middleName, pass, photo, description);
+    }
+
 
 }

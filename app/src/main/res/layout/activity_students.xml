@@ -6,9 +6,19 @@
 
     <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:text=" &lt; На головну"
-            android:id="@+id/button5" android:textAlignment="gravity" android:singleLine="true" android:gravity="left|center_vertical"
+            android:id="@+id/button5" android:textAlignment="gravity" android:singleLine="true"
+            android:gravity="left|center_vertical"
             android:onClick="goToMainPage"
             android:background="@drawable/campus_header_button" android:textColor="#FFF" android:textStyle="bold"/>
+
+    <ListView
+            android:id="@+id/students"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+    </ListView>
+
 </LinearLayout>

@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent" android:weightSum="1">
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text=" &lt; На головну"
+    <Button android:layout_width="match_parent" android:layout_height="65dp"  android:text=" &lt; На головну"
             android:id="@+id/button7" android:textAlignment="gravity" android:singleLine="true"
             android:gravity="left|center_vertical" android:layout_gravity="center_horizontal"
             android:onClick="goToMainPage"
             android:background="@drawable/campus_header_button" android:textStyle="bold" android:textColor="#FFF"/>
-</LinearLayout>
+    <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/photo"
+            android:layout_below="@+id/button7" android:layout_centerHorizontal="true" android:layout_marginTop="20dp"/>
+
+    <Button android:layout_width="370dp" android:layout_height="3dp"
+            android:background="#08BCF1"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="31dp"
+            android:layout_below="@+id/photo" android:layout_centerHorizontal="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/full_name"
+            android:paddingLeft="20dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/photo" android:layout_alignLeft="@+id/button"
+            android:layout_alignStart="@+id/button" android:layout_marginTop="77dp" android:textAlignment="textStart"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/descrition"
+            android:layout_marginTop="23dp"
+            android:paddingLeft="20dp"
+            android:textAlignment="textStart"
+            android:layout_below="@+id/full_name" android:layout_alignLeft="@+id/full_name"
+            android:layout_alignStart="@+id/full_name"/>
+</RelativeLayout>
