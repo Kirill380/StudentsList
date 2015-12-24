@@ -36,7 +36,6 @@ public class WelcomePage extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         StudentRepository repo = new StudentRepository();
         repo.save();
 
